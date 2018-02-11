@@ -1,0 +1,73 @@
+<!--Lisa Durand
+    ldurand
+    November 19, 2017
+    driver.html
+-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CMPS 160 LAB4</title>  
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+    <body onload="main()">
+        <h1>Lisa Durand LAB4</h1>
+        <canvas id = "webgl" width = "1001px" height = "1001px" style = "border: 1px solid #000">Please use a browser that supports "canvas"</canvas>
+        
+        <br>
+            
+        <input type="file" id="fileName">
+        <button id = "save" onclick="saveSOR()" type="button">Save SOR</button>
+            <button onclick="readSOR()" type="button">Extract SOR</button>
+        
+        <br>
+        
+        <p>Perspective View</p>
+         <label class="switch" id = "perspective"> 
+          <input type="checkbox" id = "smooth_check" onchange = "on_perspective_view_checkbox_clicked(this)">
+          <span class="slider round"></span>
+        </label>
+        
+        <p>Display Surface Normals</p>
+        <!-- Rounded switch -->
+        <label class="switch" id = "normals"> 
+          <input type="checkbox" id = "normal_check" onchange = "on_surface_normal_checkbox_clicked(this)">
+          <span class="slider round"></span>
+        </label>
+        
+        <br>
+        <p>Display Smooth Shading</p>
+         <label class="switch" id = "smooth"> 
+          <input type="checkbox" id = "smooth_check" onchange = "on_smooth_shading_checkbox_clicked(this)">
+          <span class="slider round"></span>
+        </label>
+        
+         <br>
+        <p>Display Specular Shading</p>
+         <label class="switch" id = "specular"> 
+          <input type="checkbox" id = "smooth_check" onchange = "on_spec_shading_checkbox_clicked(this)">
+          <span class="slider round"></span>
+        </label>
+        <br> 
+        
+        <p>Change the glossiness</p>
+        <div id="slidecontainer">
+        <input type="range" min="1" max="20" value="10" class="slider" id="myRange" oninput = "sliderValueChange(this)">
+            
+        </div>
+        
+        
+        
+    </body>
+    
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+     <script src="../lib/cuon-matrix.js"></script>
+    <script src="ioSOR.js"></script>
+    <script src="lab4.js"></script>
+ 
+</html>
